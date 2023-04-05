@@ -8,19 +8,18 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-    // MARK: - Private ITextField
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     
-    // MARK: - Private constans
-    private let userName = "Login"
-    private let password = "123"
+// MARK: - Private ITextField
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
+// MARK: - Private constans
+    private let userInfo = userData.getUserData()[0]
     
-    // MARK: - Life cycle
+// MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        savedDataUser()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -28,34 +27,31 @@ final class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let destinationVC = segue.destination as? WelcomeViewController {
-                destinationVC.userName = userNameTextField.text!
-                destinationVC.password = passwordTextField.text!
-        }
-    }
-    
-    
-    // MARK: - Private @IBAction
-    @IBAction func logInButton(_ sender: UIButton) {
+// MARK: - Private @IBAction
+    @IBAction private func logInButton(_ sender: UIButton) {
         checkLoginAndPassword()
     }
-    @IBAction func forgotNameButton(_ sender: UIButton) {
-        showAlert(title: "Oops!", message: "Your name is \(userName) 😉")
+    @IBAction private func forgotNameButton(_ sender: UIButton) {
+        showAlert(title: "Oops!", message: "Your name is \(userInfo.myName) 😉")
     }
-    @IBAction func forgotPasswordButton(_ sender: UIButton) {
-        showAlert(title: "Oops!", message: "Your password is \(password) 😉")
+    @IBAction private func forgotPasswordButton(_ sender: UIButton) {
+        showAlert(title: "Oops!", message: "Your password is \(userInfo.password) 😉")
     }
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        userNameTextField.text = ""
-        passwordTextField.text = ""
+    @IBAction private func unwind(for segue: UIStoryboardSegue) {
+        
     }
 }
 
+// Mark: - Setup LoginViewController
 private extension LoginViewController {
     
+    private func savedDataUser() {
+        userNameTextField.text = userInfo.login
+        passwordTextField.text = userInfo.password
+    }
+    
     private func checkLoginAndPassword() {
-        if userNameTextField.text == userName && passwordTextField.text == password {
+        if userNameTextField.text == userInfo.login && passwordTextField.text == userInfo.password {
             performSegue(withIdentifier: "WelcomeViewController", sender: nil)
         } else {
             showAlert(

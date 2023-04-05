@@ -8,10 +8,9 @@
 import UIKit
 
 final class WelcomeViewController: UIViewController {
-    // MARK: - Private constans
-    var userName = ""
-    var password = ""
     
+// MARK: - Private constans
+    private let userInfo = userData.getUserData()[0]
     private let primaryColor = UIColor(
         red: 210/255,
         green: 109/255,
@@ -25,20 +24,28 @@ final class WelcomeViewController: UIViewController {
         alpha: 1
     )
     
-    // MARK: - Private @IBOutlet
-    @IBOutlet weak var welcomeLabel: UILabel!
+// MARK: - Private @IBOutlet
+    @IBOutlet private weak var welcomeLabel: UILabel!
+    @IBOutlet private weak var myInfoLabel: UILabel!
     
-    
-    // MARK: - Life cycle
+// MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        welcomeLabel.text = "Welcome, \(userName)"
+        setupWelcomeLabels()
+    }
+}
+
+// Mark: - Setup WelcomeViewController
+private extension WelcomeViewController {
+    private func setupWelcomeLabels() {
+        welcomeLabel.text = "Welcome, \(userInfo.login)"
+        myInfoLabel.text = "My Name is \(userInfo.myName) \(userInfo.mySurname)"
     }
 }
 
 // MARK: - Set background color
-extension UIView {
+private extension UIView {
     func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
         let gradient = CAGradientLayer()
         gradient.frame = bounds
