@@ -21,9 +21,4 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         welcomeLabel.text = "Welcome, \(userName)"
     }
-    
-    // MARK: - Private @IBAction
-    @IBAction func logOutButton(_ sender: Any) {
-        performSegue(withIdentifier: "WelcomeBackButton", sender: self)
-    }
 }
