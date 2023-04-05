@@ -279,7 +279,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tim_Cook" translatesAutoresizingMaskIntoConstraints="NO" id="tIe-vQ-j4E">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TimCook" translatesAutoresizingMaskIntoConstraints="NO" id="tIe-vQ-j4E">
                                 <rect key="frame" x="100" y="116.5" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -301,7 +301,7 @@
                     <navigationItem key="navigationItem" title="Tim Cook" id="ejZ-eF-q8b">
                         <barButtonItem key="rightBarButtonItem" title="Bio" style="plain" id="39X-ex-3W6">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TJZ-mO-TOw">
-                                <rect key="frame" x="229" y="7.5" width="75" height="35"/>
+                                <rect key="frame" x="229" y="4.5" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Bio"/>
@@ -362,6 +362,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DUN-yZ-Iwc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WAM-XR-EeF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -381,7 +382,7 @@
                     <tabBarItem key="tabBarItem" title="Tim Cook" image="person.fill" catalog="system" id="ovv-KD-59t"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="5sh-NX-EnX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -401,7 +402,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Tim_Cook" width="900" height="774"/>
+        <image name="TimCook" width="900" height="774"/>
         <image name="WelcomeHand" width="1920" height="1920"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
